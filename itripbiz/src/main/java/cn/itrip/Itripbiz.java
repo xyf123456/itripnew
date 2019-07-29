@@ -13,7 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version:        1.0
  **/
 @SpringBootApplication
-@MapperScan(basePackages = {"cn.itrip.dao"})
+//这里通过JAVA的配置方式配置成功后，可以将这里注释掉
+//@MapperScan(basePackages = {"cn.itrip.dao"})
 public class Itripbiz {
 
     public static void main(String[] args) {
