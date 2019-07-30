@@ -1,4 +1,4 @@
-package cn.itrip.config;
+package cn.itrip.config.mybatis;
 
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.context.annotation.Bean;

@@ -10,7 +10,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import cn.itrip.common.Constants;
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
+@Transactional
 public class ItripOrderLinkUserServiceImpl implements ItripOrderLinkUserService {
 
     @Resource

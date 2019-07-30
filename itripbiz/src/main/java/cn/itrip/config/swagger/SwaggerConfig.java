@@ -1,4 +1,4 @@
-package cn.itrip.config;
+package cn.itrip.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

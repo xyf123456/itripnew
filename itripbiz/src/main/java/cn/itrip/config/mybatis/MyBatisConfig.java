@@ -1,4 +1,4 @@
-package cn.itrip.config;
+package cn.itrip.config.mybatis;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
@@ -8,17 +8,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.annotation.Resource;
 import java.io.IOException;
 
 /**
- * ClassName: cn.itrip.config.MyBatisConfig
+ * ClassName: cn.itrip.config.mybatis.MyBatisConfig
  * Description: MyBatis核心配置类（JAVA的方式进行配置）
  * Author: xyf
  * Date 2019/7/30 7:39
  */
 @Configuration
+@EnableTransactionManagement
 public class MyBatisConfig {
 
     @Resource

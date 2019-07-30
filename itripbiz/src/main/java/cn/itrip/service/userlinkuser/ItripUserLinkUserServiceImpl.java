@@ -9,7 +9,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import cn.itrip.common.Constants;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 @Service
+@Transactional
 public class ItripUserLinkUserServiceImpl implements ItripUserLinkUserService {
 
     @Resource
@@ -42,6 +46,7 @@ public class ItripUserLinkUserServiceImpl implements ItripUserLinkUserService {
         return itripUserLinkUserMapper.updateItripUserLinkUser(itripUserLinkUser);
     }
 
+    @Transactional(propagation = Propagation.REQUIRED,rollbackFor = RuntimeException.class)
     public Integer deleteItripUserLinkUserByIds(Long[] ids)throws Exception{
         return itripUserLinkUserMapper.deleteItripUserLinkUserByIds(ids);
     }
