@@ -15,16 +15,16 @@ import javax.annotation.Resource;
 @Component
 public class RedisAPI {
 
-//	@Resource
+	@Resource
 	public JedisPool jedisPool;
 
-	public JedisPool getJedisPool() {
+	/*public JedisPool getJedisPool() {
 		return jedisPool;
 	}
 
 	public void setJedisPool(JedisPool jedisPool) {
 		this.jedisPool = jedisPool;
-	}
+	}*/
 
 	/**
 	 * set key and value to redis

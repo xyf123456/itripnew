@@ -3,6 +3,7 @@ package cn.itrip.common;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import redis.clients.jedis.JedisPoolConfig;
 
 
 /**
@@ -13,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
  * @UpdateUser:   Administrator
  * @Version:        1.0
  **/
-//@Configuration
-//@ConfigurationProperties(prefix = "spring.redis.pool")
+@Configuration
+@ConfigurationProperties(prefix = "spring.redis.pool")
 public class JedisPoolConfigProperties {
 
     private int maxActive;
@@ -45,13 +46,13 @@ public class JedisPoolConfigProperties {
         this.maxWait = maxWait;
     }
 
-    /*@Bean
+    @Bean
     public JedisPoolConfig jedisPoolConfig(){
         JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
         jedisPoolConfig.setMaxIdle(maxIdle);
-        jedisPoolConfig.setMaxWait(maxWait);
-        jedisPoolConfig.setMaxActive(maxActive);
+        jedisPoolConfig.setMaxTotal(maxActive);
+        jedisPoolConfig.setMaxWaitMillis(maxWait);
         jedisPoolConfig.setTestOnBorrow(true);
         return jedisPoolConfig;
-    }*/
+    }
 }

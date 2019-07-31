@@ -44,8 +44,8 @@ public class UserInfoController {
     @Resource
     private ItripUserLinkUserService itripUserLinkUserService;
 
-//    @Resource
-//    private ValidationToken validationToken;
+    @Resource
+    private ValidationToken validationToken;
 
     @Resource
     private ItripOrderLinkUserServiceImpl itripOrderLinkUserService;
@@ -55,7 +55,7 @@ public class UserInfoController {
      * @return
      * @throws Exception
      */
-   /* @ApiOperation(value = "查询常用联系人接口", httpMethod = "POST",
+    @ApiOperation(value = "查询常用联系人接口", httpMethod = "POST",
             protocols = "HTTP",produces = "application/json",
             response = Dto.class,notes = "查询常用联系人信息(可根据联系人姓名进行模糊查询)"+
             "<p>若不根据联系人姓名进行查询，不输入参数即可 | 若根据联系人姓名进行查询，须进行相应的入参，比如：{\"linkUserName\":\"张三\"}</p>" +
@@ -87,9 +87,9 @@ public class UserInfoController {
         }else{
             return DtoUtil.returnFail("token失效，请重新登录","100000");
         }
-    }*/
+    }
 
-   /* @ApiOperation(value = "新增常用联系人接口", httpMethod = "POST",
+    @ApiOperation(value = "新增常用联系人接口", httpMethod = "POST",
             protocols = "HTTP",produces = "application/json",
             response = Dto.class,notes = "新增常用联系人信息"+
             "<p>成功：success = ‘true’ | 失败：success = ‘false’ 并返回错误码，如下：</p>" +
@@ -124,9 +124,9 @@ public class UserInfoController {
         }else{
             return DtoUtil.returnFail("token失效，请重新登录", "100000");
         }
-    }*/
+    }
 
-    /*@ApiOperation(value = "修改常用联系人接口", httpMethod = "POST",
+    @ApiOperation(value = "修改常用联系人接口", httpMethod = "POST",
             protocols = "HTTP",produces = "application/json",
             response = Dto.class,notes = "修改常用联系人信息"+
             "<p>成功：success = ‘true’ | 失败：success = ‘false’ 并返回错误码，如下：</p>" +
@@ -162,7 +162,7 @@ public class UserInfoController {
         }else{
             return DtoUtil.returnFail("token失效，请重新登录", "100000");
         }
-    }*/
+    }
 
     @ApiOperation(value = "删除常用联系人接口", httpMethod = "GET",
             protocols = "HTTP",produces = "application/json",
@@ -176,12 +176,11 @@ public class UserInfoController {
     @RequestMapping(value="/deluserlinkuser",method=RequestMethod.GET,produces = "application/json")
     @ResponseBody
     public Dto<Object> delUserLinkUser(Long[] ids, HttpServletRequest request) {
-//        String tokenString  = request.getHeader("token");
-//        logger.debug("token name is from header : " + tokenString);
-//        ItripUser currentUser = validationToken.getCurrentUser(tokenString);
+        String tokenString  = request.getHeader("token");
+        logger.debug("token name is from header : " + tokenString);
+        ItripUser currentUser = validationToken.getCurrentUser(tokenString);
         List<Long> idsList = new ArrayList<Long>();
-//        null != currentUser &&
-        if( EmptyUtils.isNotEmpty(ids)){
+        if(null != currentUser && EmptyUtils.isNotEmpty(ids)){
             try {
                 List<Long> linkUserIds = itripOrderLinkUserService.getItripOrderLinkUserIdsByOrder();
                 Collections.addAll(idsList, ids);
@@ -197,11 +196,10 @@ public class UserInfoController {
                 return DtoUtil.returnFail("删除常用联系人失败","100432");
             }
             return DtoUtil.returnSuccess("删除常用联系人成功");
-        }/*else if(null != currentUser && EmptyUtils.isEmpty(ids)){
+        }else if(null != currentUser && EmptyUtils.isEmpty(ids)){
             return DtoUtil.returnFail("请选择要删除的常用联系人","100433");
-        }*/else{
-//            return DtoUtil.returnFail("token失效，请重新登录","100000");
-            return DtoUtil.returnFail("请选择要删除的常用联系人","100433");
+        }else{
+            return DtoUtil.returnFail("token失效，请重新登录","100000");
         }
     }
 

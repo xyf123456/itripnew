@@ -3,6 +3,8 @@ package cn.itrip.common;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.JedisPoolConfig;
 
 import javax.annotation.Resource;
 
@@ -14,8 +16,8 @@ import javax.annotation.Resource;
  * @UpdateUser: Administrator
  * @Version: 1.0
  **/
-//@Configuration
-//@ConfigurationProperties(prefix = "spring.redis")
+@Configuration
+@ConfigurationProperties(prefix = "spring.redis")
 public class JedisPoolProperties {
 
     private String host;
@@ -24,8 +26,8 @@ public class JedisPoolProperties {
     private int database;
     private int timeout;
 
-  /*  @Resource
-    private JedisPoolConfig jedisPoolConfig;*/
+    @Resource
+    private JedisPoolConfig jedisPoolConfig;
 
     public String getHost() {
         return host;
@@ -68,8 +70,8 @@ public class JedisPoolProperties {
         this.timeout = timeout;
     }
 
-    /*@Bean
+    @Bean
     public JedisPool jedisPool() {
         return new JedisPool(jedisPoolConfig, host, port, timeout, password);
-    }*/
+    }
 }

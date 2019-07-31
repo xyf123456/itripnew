@@ -13,7 +13,6 @@ import cn.itrip.common.Constants;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
 public class ItripOrderLinkUserServiceImpl implements ItripOrderLinkUserService {
 
     @Resource
