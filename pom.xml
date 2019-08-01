@@ -13,6 +13,7 @@
         <module>itripbeans</module>
         <module>itripdao</module>
         <module>itriputils</module>
+        <module>itripauth</module>
     </modules>
 
 

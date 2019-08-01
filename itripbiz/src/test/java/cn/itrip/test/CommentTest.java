@@ -7,7 +7,7 @@ package cn.itrip.test;
 //
 //import cn.itrip.beans.pojo.ItripComment;
 //import cn.itrip.beans.pojo.ItripImage;
-//import cn.itrip.service.itripComment.ItripCommentService;
+//import cn.itrip.biz.service.itripComment.ItripCommentService;
 //import org.junit.Test;
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.support.ClassPathXmlApplicationContext;

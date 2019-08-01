@@ -1,6 +1,6 @@
 package cn.itrip.test;
 
-import cn.itrip.service.hoteltempstore.ItripHotelTempStoreService;
+import cn.itrip.biz.service.hoteltempstore.ItripHotelTempStoreService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

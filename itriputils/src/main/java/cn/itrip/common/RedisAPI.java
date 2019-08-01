@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 public class RedisAPI {
 
 	@Resource
-	public JedisPool jedisPool;
+	private JedisPool jedisPool;
 
 	/*public JedisPool getJedisPool() {
 		return jedisPool;

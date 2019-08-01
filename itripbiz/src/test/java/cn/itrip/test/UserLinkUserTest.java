@@ -8,7 +8,7 @@
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.support.ClassPathXmlApplicationContext;
 //
-//import cn.itrip.service.client.IClientUserLinkUserService;
+//import cn.itrip.biz.service.client.IClientUserLinkUserService;
 //
 //public class UserLinkUserTest {
 //

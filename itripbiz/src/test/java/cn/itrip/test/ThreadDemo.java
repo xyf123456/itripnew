@@ -1,6 +1,6 @@
 package cn.itrip.test;
 import cn.itrip.common.DateUtil;
-import cn.itrip.service.hoteltempstore.ItripHotelTempStoreService;
+import cn.itrip.biz.service.hoteltempstore.ItripHotelTempStoreService;
 
 import java.util.HashMap;
 import java.util.Map;
