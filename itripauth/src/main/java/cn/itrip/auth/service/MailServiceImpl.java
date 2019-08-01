@@ -1,9 +1,9 @@
 package cn.itrip.auth.service;
 
 import cn.itrip.common.RedisAPI;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,13 +22,15 @@ public class MailServiceImpl implements MailService {
 	private MailSender mailSender;
 	@Resource
 	private RedisAPI redisAPI;
-	@Resource
-	private SimpleMailMessage activationMailMessage;
+
+//	@Resource
+//	private JavaMailSender mailSender;
 	/**
 	 * 发送注册激活邮件
 	 */
 	public void sendActivationMail(String mailTo, String activationCode) {
-		activationMailMessage.setTo(mailTo);		
+		SimpleMailMessage activationMailMessage = new SimpleMailMessage();
+		activationMailMessage.setTo(mailTo);
 		activationMailMessage.setText("注册邮箱："+mailTo +"  激活码："+activationCode);
 		mailSender.send(activationMailMessage);
 		this.saveActivationInfo("activation:"+mailTo, activationCode);
