@@ -13,6 +13,7 @@ import cn.itrip.common.MD5;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,7 +52,7 @@ public class LoginController {
 //			@ApiParam(required = true, name = "name", value = "用户名",defaultValue="yao.liu2015@bdqn.cn")
 			@RequestParam
 			String name,
-//			@ApiParam(required = true, name = "password", value = "密码",defaultValue="111111")			
+//			@ApiParam(required = true, name = "password", value = "密码",defaultValue="111111")
 			@RequestParam
 			String password,
 			HttpServletRequest request) {

@@ -38,18 +38,18 @@ public interface TokenService {
 	 * @param tokenID
 	 * @param user
 	 */
-	public void save(String token, ItripUser user);
+	public void save(String tokenID, ItripUser user);
 	/**
 	 * 从redis获取用户信息
 	 * @param tokenID
 	 * @return
 	 */
-	public ItripUser load(String token);
+	public ItripUser load(String tokenID);
 	/**
 	 * 删除token
 	 * @param tokenID
 	 */
-	public void delete(String token);
+	public void delete(String tokenID);
 
 	/**
 	 * 置换Token <BR/>

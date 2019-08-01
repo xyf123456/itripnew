@@ -30,7 +30,6 @@ public class SmsServiceImpl implements SmsService {
 		//*生产环境（用户应用上线使用）：restAPI.init("app.cloopen.com", "8883");       *
 		//*******************************************************************************
 		restAPI.init(systemConfig.getSmsServerIP(), systemConfig.getSmsServerPort());
-		
 		//******************************注释*********************************************
 		//*初始化主帐号和主帐号令牌,对应官网开发者主账号下的ACCOUNT SID和AUTH TOKEN     *
 		//*ACOUNT SID和AUTH TOKEN在登陆官网后，在“应用-管理控制台”中查看开发者主账号获取*
