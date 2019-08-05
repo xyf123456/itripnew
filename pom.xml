@@ -15,6 +15,7 @@
         <module>itriputils</module>
         <module>itripauth</module>
         <module>itriptrade</module>
+        <module>itripsearch</module>
     </modules>
 
 

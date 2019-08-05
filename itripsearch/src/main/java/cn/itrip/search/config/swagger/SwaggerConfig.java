@@ -1,4 +1,4 @@
-package cn.itrip.trade.config.swagger;
+package cn.itrip.search.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @Version: 1.0
  **/
 @Configuration
-@ComponentScan(basePackages = {"cn.itrip.trade.controller"})
+@ComponentScan(basePackages = {"cn.itrip.auth.controller"})
 @EnableSwagger2
 public class SwaggerConfig {
 
@@ -36,7 +36,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("爱旅行-交易模块API")
+                .title("爱旅行-认证模块API")
                 .termsOfServiceUrl("http://www.itrip.com/auth")
                 .contact("爱旅行")
                 .version("1.0")
