@@ -26,7 +26,7 @@ import java.util.Map;
  * Created by XX on 17-5-10.
  */
 @Controller
-@Api(value = "API", basePath = "/http://api.itrap.com/api")
+@Api(value = "API", basePath = "/http://127.0.0.1:8084/search/api")
 @RequestMapping(value = "/api/hotellist")
 public class HotelListController {
 

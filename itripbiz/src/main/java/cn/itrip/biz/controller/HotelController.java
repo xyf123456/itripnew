@@ -49,7 +49,7 @@ import java.util.Map;
  */
 
 @Controller
-@Api(value = "API", basePath = "/http://api.itrap.com/api")
+@Api(value = "API",  basePath = "/http://127.0.0.1:8080/biz/api")
 @RequestMapping(value = "/api/hotel")
 public class HotelController {
 

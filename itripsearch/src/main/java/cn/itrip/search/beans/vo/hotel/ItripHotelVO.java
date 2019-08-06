@@ -11,7 +11,8 @@ import java.io.Serializable;
 public class ItripHotelVO implements Serializable {
 
     @Field("id")
-    private Long id;
+//    private Long id;
+    private String id;
 
     @Field("hotelName")
     private String hotelName;
@@ -116,11 +117,19 @@ public class ItripHotelVO implements Serializable {
         this.featureNames = featureNames;
     }
 
-    public Long getId() {
+    /*public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
+        this.id = id;
+    }*/
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
         this.id = id;
     }
 

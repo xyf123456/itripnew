@@ -118,9 +118,9 @@ public class AliPaymentController {
 		model.setTimeoutExpress(timeout_express);
 		model.setProductCode(product_code);
 		alipay_request.setBizModel(model);
-		// 设置异步通知地址
+		// 设置异步通知地址，（）
 		alipay_request.setNotifyUrl(alipayConfig.getNotifyUrl());
-		// 设置同步地址
+		// 设置同步地址（支付完成之后的地址，表示支付成功或者失败）
 		alipay_request.setReturnUrl(alipayConfig.getReturnUrl());
 		// form表单生产
 		String form = "";
